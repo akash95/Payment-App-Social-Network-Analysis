@@ -57,7 +57,7 @@ venmo = df.sample(withReplacement=False, fraction=fraction, seed=seed)
 #  want to display 10 rows
 venmo.show(10)
 
-"""Q5 [10 pts]: Write a script to find a user’s friends and friends of friends (Friend definition: A user’s friend is someone who has transacted with the user, either sending money to the user or receiving money from the user). Describe your algorithm and calculate its computational complexity. Can you do it better?"""
+""" Write a script to find a user’s friends and friends of friends (Friend definition: A user’s friend is someone who has transacted with the user, either sending money to the user or receiving money from the user). Describe your algorithm and calculate its computational complexity"""
 
 #script to find a user’s friends
 
@@ -90,18 +90,19 @@ friends_of_friends = friends_of_friends.select(col("f1.user").alias("user"), col
 
 friends_of_friends.show(10)
 
-"""Q6 [20 pts]: Now, that you have the list of each user’s friends and friends of friends, you are in
-position to calculate many social network variables. Use the dynamic analysis from before, and
-calculate the following social network metrics across a user’s lifetime in Venmo (from 0 up to 12
+"""Now, that we have the list of each user’s friends and friends of friends, we are in
+position to calculate many social network variables. We use the dynamic analysis from before, and
+calculate the following social network metrics across a user’s lifetime in the app (from 0 up to 12
 months).
-i) Number of friends and number of friends of friends [very easy, 4 pts].
-ii) Clustering coefficient of a user's network [easy, 6 pts]. (Hint: the easiest way to calculate this
+Metrics: 
+i) Number of friends and number of friends of friends 
+ii) Clustering coefficient of a user's network (Hint: the easiest way to calculate this
 is to program it yourselves. Alternatively, you can use “NetworKit” or “networkX” python
 package. The latter approach will slow down your script significantly).
-iii) Calculate the page rank of each user (hard, 10 pts). (Hint: First of all, you need to use
+iii) Calculate the page rank of each user. (Hint: First of all, you need to use
 GraphFrames to do this. Moreover, notice that page rank is a global social network metric. If
-you go ahead and calculate the page rank for each user at each of her lifetime points, you will
-soon realize it will be a dead end. Can you think of a smart way to do this?)
+we go ahead and calculate the page rank for each user at each of her lifetime points, we will
+soon realize it will be a dead end)
 """
 
 #i) Number of friends and number of friends of friends:
